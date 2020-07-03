@@ -6,7 +6,7 @@ Vulnerable versions affected:
 * SockJS 0.3.19
 
 ## Usage
-This POC is targeted towards vulnerable MeteorJS apps. To customise, change the paylodas from `/sockjs` to corresponding routes of managed by SockJS.
+This POC is targeted towards vulnerable MeteorJS apps. To customise, change the payloads from `/sockjs` to corresponding routes of managed by SockJS.
 
 Install Python, then run in cmd/terminal:
 ```
