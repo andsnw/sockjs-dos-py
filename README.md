@@ -16,6 +16,14 @@ pip install requests
 python poc.py --target <domain>
 ```
 
+A demo Meteor app running the vulnerable sockjs has been included. To test the exploit on this demo app, install Meteor from https://www.meteor.com/install and then:
+```
+cd demo/
+meteor
+```
+
+And then point the payload target to `http://localhost:3000`
+
 ## Remediation
 Update SockJS to 0.3.20
 
